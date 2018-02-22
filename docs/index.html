@@ -5,11 +5,69 @@
     <title>Facharbeit</title>
 </head>
 <body>
-<h1>Rohdaten</h1>
-<p><a href="https://github.com/jan-de-haan/facharbeit/raw/master/Rohdaten.zip">ZIP-Archiv mit den Rohdaten</a></p>
-<h1>3D-Modell der Messapparatur</h1>
-<p><a href="https://raw.githubusercontent.com/jan-de-haan/facharbeit/master/Messapparatur.stl">3D-Modell als STL-Datei herunterladen</a></p>
+<h1>Weiterführende Ressourcen und Informationen zur Facharbeit</h1>
 
-<p><a href="https://github.com/jan-de-haan/facharbeit/blob/master/Messapparatur.stl">3D-Modell im Browser betrachten</a></p>
+<h2>Rohdaten</h2>
+
+<p>
+    <a href="https://github.com/jan-de-haan/facharbeit/raw/master/Rohdaten.zip">ZIP-Archiv mit den Rohdaten</a>
+</p>
+
+<p>
+Das Archiv enthält für jeden Körper und die Kalibrierung einen Ordner, in dem
+sich mehrere CSV-Dateien befinden. Diese Dateien enthalten jeweils in der
+ersten Spalte die vergangene Zeit seit Messbeginn in µs (nur zum Teil bei 0
+beginnend) und in den darauffolgenden Spalten die Beschleunigung als Vielfaches
+der Erdbeschleunigung g = 9,80665 in x-, y- und z-Richtung.
+</p>
+<p>
+Bei allen Messungen ist die z-Achse parallel zur Fallrichtung bzw. zur
+Erdbeschleunigung.
+</p>
+
+<h2>3D-Modell der Messapparatur</h2>
+
+<p>
+<a href="https://raw.githubusercontent.com/jan-de-haan/facharbeit/master/Messapparatur.stl">3D-Modell als STL-Datei herunterladen</a>
+</p>
+
+<p>
+<a href="https://github.com/jan-de-haan/facharbeit/blob/master/Messapparatur.stl">3D-Modell im Browser betrachten</a>
+</p>
+
+<h2>Programme zum Durchführen der Messungen</h2>
+
+<p>
+Die Messung der Daten wird mit zwei Python-Skripten durchgeführt. Das Skript
+<code>server.py</code> wird auf dem Raspberry Pi ausgeführt. Es stellt eine
+REST-API auf Port 80 zur Verfügung, die vom Programm <code>client.py</code>
+genutzt wird, um rudimentäre Diagramme zu erstellen. Letzteres Skript läuft
+i.d.R. auf einem anderen Computer, der sich in demselben Netzwerk wie der
+Raspberry Pi befindet (z.B., indem die beiden mit einem Ethernet-Kabel verbunden
+und entsprechend konfiguriert werden).
+</p>
+
+<p>
+<a href="https://github.com/jan-de-haan/facharbeit/raw/master/Messprogramme.zip">Quellcode der Messprogramme</a>
+</p>
+
+<h2>Programm zum Finden des c<sub>w</sub>-Wertes mit den geringsten quadratischen Abweichungen</h2>
+
+<p>
+<a href="https://github.com/jan-de-haan/facharbeit/raw/master/best-fit.py"><code>best-fit.py</code></a>
+(<a href="https://github.com/jan-de-haan/facharbeit/blob/master/best-fit.py">Github</a>)
+findet für gegebenen Messwerte und Eigenschaften eines Körpers den
+c<sub>w</sub>-Wert mit den geringsten quadratischen Abweichungen.
+</p>
+
+<h2>Programm zum Konvertieren von CSV-Dateien</h2>
+
+<p>
+<a href="https://github.com/jan-de-haan/facharbeit/raw/master/convert-csv.py"><code>convert-csv.py</code></a>
+(<a href="https://github.com/jan-de-haan/facharbeit/blob/master/convert-csv.py">Github</a>)
+konvertiert eine CSV-Datei, in der als Dezimaltrennzeichen ein Komma verwendet
+wird und daher alle Zahlen in Anführungszeichen stehen, zu einer CSV-Datei mit
+englischem Zahlenformat ohne Anführungszeichen.
+</p>
 </body>
 </html>
